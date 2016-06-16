@@ -28,7 +28,7 @@ def echo(bot, update):
 	
 	if text.find('hola') >= 0:
 		bot.sendMessage(chat_id=update.message.chat_id, text='Hola :)')
-	if text.find('como estas?') >= 0:
+	if text.find('como estas') >= 0 or text.find('cómo estás') >= 0 or text.find('cómo estas') >= 0:
 		bot.sendMessage(chat_id=update.message.chat_id, text='Bien y tu?')
 
 	if text.find('linux') >= 0 or text.find('ubuntu') >= 0 or text.find('manjaro') >= 0 or text.find('unix') >= 0:
@@ -39,12 +39,12 @@ def echo(bot, update):
 			bot.sendMessage(chat_id=update.message.chat_id, text='Probaste instalando Windows?')
 	elif text.find('arvoleda') >= 0 or text.find('vegan') >= 0 or text.find('vegeta') >= 0:
 		bot.sendMessage(chat_id=update.message.chat_id, text='Y donde está mi carne?!')
+	elif user.username.lower() == 'ommirandap' and random.randint(1,16) == 8:
+		bot.sendMessage(chat_id=update.message.chat_id, text='Ven? por eso el otro Omar era el buen Omar')
+	elif user.username.lower() == 'thebestaround' and random.randint(1,16) == 8:
+		bot.sendMessage(chat_id=update.message.chat_id, text='@thebestaround Te amo Boris <3')
 	elif text.find('lucha') >= 0:
 		bot.sendMessage(chat_id=update.message.chat_id, text='Yo quiero ser Diva')
-	elif user.username.lower() == 'ommirandap':
-		bot.sendMessage(chat_id=update.message.chat_id, text='Ven? por eso el otro Omar era el buen Omar')
-	elif user.username.lower() == 'thebestaround':
-		bot.sendMessage(chat_id=update.message.chat_id, text='Te amo Boris <3')
 	else:
 		n = random.randint(1,30)
 		if n == 10:
@@ -52,11 +52,11 @@ def echo(bot, update):
 		elif n == 15:
 			bot.sendMessage(chat_id=update.message.chat_id, text='Cuando va a estar Egreen para android 4.1.2?')
 		elif n == 5:
-			bot.sendMessage(chat_id=update.message.chat_id, text='Tienes mi sello de aprobación')
+			bot.sendMessage(chat_id=update.message.chat_id, text='@' + user.nickname + ' tienes mi sello de aprobación')
 		elif n == 29:
 			bot.sendMessage(chat_id=update.message.chat_id, text='Sabías que los gatos anulan las malas vibras del WiFi?')
 		elif n == 13:
-			bot.sendMessage(chat_id=update.message.chat_id, text='Cuando va a estar Egreen para android 4.1.2?')
+			bot.sendMessage(chat_id=update.message.chat_id, text='Y cuándo va a estar Egreen para android 4.1.2?')
 
 # Esto filtra si el usuario envia un mensaje
 echo_handler = MessageHandler([Filters.text], echo)
